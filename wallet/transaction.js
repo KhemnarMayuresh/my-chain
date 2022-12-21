@@ -7,32 +7,32 @@ class Transaction {
         this.outputs = [];
     }
 
-    update(senderWallet, recipient, amount){
-        const senderOutput = this.outputs.find(output=>output.address === senderWallet.publicKey);
+    update(senderWallet, recipient, amount) {
+        const senderOutput = this.outputs.find(output => output.address === senderWallet.publicKey);
 
-        if(amount>senderOutput.amount){
+        if (amount > senderOutput.amount) {
             console.log(`Amount ${amount} exceeeds the balance.`);
             return;
         }
 
-        senderOutput.amount = senderOutput.amount -amount;
-        this.outputs.push({amount, address: recipient});
+        senderOutput.amount = senderOutput.amount - amount;
+        this.outputs.push({ amount, address: recipient });
         Transaction.signTransaction(this, senderWallet);
 
         return this;
     }
 
-    static newTransaction(senderWallet, recipient, amount){
+    static newTransaction(senderWallet, recipient, amount) {
         const transaction = new this();
 
-        if(amount>senderWallet.balance){
+        if (amount > senderWallet.balance) {
             console.log(`Amount: ${amount} exceeds balance.`);
             return;
         }
 
         transaction.outputs.push(...[
-            {amount:senderWallet.balance-amount, address: senderWallet.publicKey},
-            {amount, address: recipient}
+            { amount: senderWallet.balance - amount, address: senderWallet.publicKey },
+            { amount, address: recipient }
         ])
 
         Transaction.signTransaction(transaction, senderWallet);
@@ -40,8 +40,8 @@ class Transaction {
         return transaction;
     }
 
-    static signTransaction(transaction, senderWallet){
-        transaction.input={
+    static signTransaction(transaction, senderWallet) {
+        transaction.input = {
             timestamp: Date.now(),
             amount: senderWallet.balance,
             address: senderWallet.publicKey,
@@ -49,7 +49,7 @@ class Transaction {
         }
     }
 
-    static verifyTransaction(transaction){
+    static verifyTransaction(transaction) {
         return ChainUtil.verifySignature(
             transaction.input.address,
             transaction.input.signature,
