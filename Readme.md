@@ -58,14 +58,13 @@ Created a NodeJS application with real-time websocket connections. which created
 
 ## Commands
 
-to execute all test scripts
+### to execute all test scripts
 `npm run test`
 
-to execute all test scripts in dev-test.js file.
+### to execute all test scripts in dev-test.js file.
 `npm run dev-test`
-`npm run start`
 
-to start blockchain node
+### to start blockchain node
 - initial node (first node) 
     
     `npm run dev`
@@ -90,3 +89,4 @@ to start blockchain node
     P2P_PORT=5002 to select differnt webscoket port no
     PEERS=ws://localhost:5001,ws://localhost:5002 to connect to previous two node.
 
+***Note***-`npm run start` works similar to `npm run dev`. Difference is that dev will execute app with **nodemon** and start will execute app with **node**. 
