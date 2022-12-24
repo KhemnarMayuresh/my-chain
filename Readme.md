@@ -23,6 +23,8 @@ Created a NodeJS application with real-time websocket connections. which created
 
     *Note* : You can call this api using your localhost. execute command `npm run dev`. Then the API will be available on port 3001. whereas the port no 5001 will be used for websocket to cummunicate with other blockchain nodes. 
 
+- **miner.js** - Miner code which contain all necessary functions for mining proccess on blockchain. 
+
 - **p2p-server.js** - P2pServer code which contain websocket to connect with other blockcahin nodes and sync blockcahin over all connected nodes. 
 
 > **blockchain folder** - contains the logic for blocks and blockchain.
@@ -49,6 +51,8 @@ Created a NodeJS application with real-time websocket connections. which created
 
 - **transaction-pool.test.js** - The test script that used for testing the TransactionPool module in transaction-pool.js.
 
+
+> **API Calls.postman_collection** - contains the postman api call collections for our blockchain.
 
 > **chain-util.js** - contains the chain-util class which has useful functions for blockchain.
 

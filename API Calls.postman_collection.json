@@ -1,0 +1,106 @@
+{
+	"variables": [],
+	"info": {
+		"name": "my blockchain",
+		"_postman_id": "342ad6d7-05fc-9f36-1024-25b831fdabac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/blocks",
+			"request": {
+				"url": "http://localhost:3001/blocks",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/mine",
+			"request": {
+				"url": "http://localhost:3001/mine",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":\"testingData\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/transactions",
+			"request": {
+				"url": "http://localhost:3001/transactions",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/transact",
+			"request": {
+				"url": "http://localhost:3001/transact",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"recipient\": \"foo-4ddr355\",\n\t\"amount\": 50\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/public-key",
+			"request": {
+				"url": "http://localhost:3001/public-key",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/mine-transactions",
+			"request": {
+				"url": "http://localhost:3002/mine-transactions",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/balance",
+			"request": {
+				"url": "http://localhost:3001/balance",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

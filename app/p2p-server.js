@@ -84,8 +84,8 @@ class P2pServer {
         });
     }
 
-    broadcastClearTransactions(){
-        this.sockets.forEach(socket =>{
+    broadcastClearTransactions() {
+        this.sockets.forEach(socket => {
             socket.send(JSON.stringify({
                 type: MESSAGE_TYPE.clear_transactions
             }));
